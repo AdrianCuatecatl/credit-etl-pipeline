@@ -1,63 +1,98 @@
 # Credit ETL Pipeline
 
-Pipeline ETL orientado a datos de riesgo crediticio, diseñado para simular un flujo real de ingestión, transformación y carga de información financiera.
+Pipeline ETL end-to-end que simula un entorno de riesgo crediticio, incluyendo generación de datos, modelado relacional y análisis SQL orientado a negocio.
 
 ## Objetivo
 
-Construir un proceso reproducible que permita:
+Desarrollar un flujo reproducible de datos que permita simular un escenario de análisis crediticio, desde la generación de información hasta la ejecución de consultas de negocio sobre cartera, pagos y convenios.
 
-- Integrar datos de créditos, pagos y convenios
-- Modelar relaciones entre entidades financieras
-- Ejecutar consultas de negocio sobre cartera
-- Validar calidad e integridad de datos
+Este proyecto busca mostrar habilidades en:
 
-## Tecnologías
+- Construcción de pipelines ETL con Python
+- Modelado relacional para análisis financiero
+- Ejecución de consultas SQL orientadas a negocio
+- Organización de proyectos reproducibles para portafolio técnico
 
-- Python (pandas)
-- SQL (SQLite para entorno local)
-- SQLAlchemy
+## Alcance del proyecto
 
-## Flujo del pipeline
+El pipeline parte de datos sintéticos y construye un flujo simple pero funcional para analizar información de créditos, pagos y convenios.
 
-1. Extract
-   - Generación de datos simulados de créditos con lógica de negocio
+Incluye:
 
-2. Transform
-   - Tipificación de datos
-   - Validación de nulos
-   - Limpieza de datos
+- Generación de `creditos.csv` con lógica de negocio
+- Carga de archivos `.csv` a una base SQLite
+- Creación de tablas relacionales mediante SQL
+- Validaciones básicas de integridad
+- Consultas analíticas para evaluar cartera
 
-3. Load
-   - Creación de tablas
-   - Inserción de datos en base relacional
 
-4. Análisis
-   - Consultas SQL para:
-     - Colocación de cartera
-     - Distribución por estatus
-     - Recuperación de crédito
-     - Desempeño por convenio
-
-## Cómo ejecutar
-
-### 1. Instalar dependencias
-python -m pip install -r requirements.txt
+## Cómo ejecutar el proyecto
 
 ### 2. Generar datos
+```bash
 python src/extract.py
+```
 
-### 3. Cargar a base
+### 3. Cargar datos en SQLite
+```bash
 python src/load.py
+```
 
-### 4. Ejecutar análisis
+### 4. Ejecutar validaciones y consultas de negocio
+```bash
 python src/main.py
+```
 
-## Resultados esperados
+---
 
-- Base de datos relacional funcional
-- Métricas de negocio sobre cartera crediticia
-- Pipeline reproducible end-to-end
+## Validaciones incluidas
 
-## Notas
+El proyecto incluye validaciones básicas para verificar:
 
-Este proyecto utiliza SQLite para facilitar su ejecución local, pero está diseñado para escalar a motores como SQL Server o PostgreSQL.
+- conteo de registros por tabla  
+- integridad mínima de la carga  
+- funcionamiento de consultas SQL  
+
+---
+
+## Decisiones de diseño
+
+### Uso de SQLite
+Se eligió SQLite para facilitar la ejecución local del proyecto y evitar dependencias adicionales en entorno de portafolio.
+
+### Separación de SQL y Python
+El SQL se mantiene en archivos `.sql` separados para:
+
+- mejorar legibilidad  
+- mostrar modelado de datos  
+- facilitar mantenimiento  
+- evidenciar habilidad en SQL  
+
+### Datos sintéticos
+Se utilizan datos simulados para evitar exposición de información sensible y construir un caso alineado con riesgo crediticio.
+
+---
+
+## Próximas mejoras
+
+- robustecer `transform.py`  
+- agregar validaciones de calidad más completas  
+- incorporar métricas de morosidad  
+- agregar visualización en Power BI o notebooks  
+- escalar el pipeline hacia SQL Server o PostgreSQL  
+- incluir diagrama del flujo ETL  
+
+---
+
+## Conclusión
+
+Este proyecto muestra una implementación funcional de un pipeline ETL aplicado a un caso de riesgo crediticio, integrando generación de datos, modelado relacional, carga automatizada y consultas analíticas de negocio.
+
+
+
+
+
+
+
+
+
