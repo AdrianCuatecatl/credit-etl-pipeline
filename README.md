@@ -13,6 +13,10 @@ Este proyecto busca mostrar habilidades en:
 - Ejecución de consultas SQL orientadas a negocio
 - Organización de proyectos reproducibles para portafolio técnico
 
+## Arquitectura del pipeline
+
+![Diagrama ETL](assets/etl-diagram.png)
+
 ## Alcance del proyecto
 
 El pipeline parte de datos sintéticos y construye un flujo simple pero funcional para analizar información de créditos, pagos y convenios.
@@ -83,7 +87,26 @@ Se utilizan datos simulados para evitar exposición de información sensible y c
 - incluir diagrama del flujo ETL  
 
 ---
+## Impacto de negocio
 
+Este pipeline permite simular un escenario real de análisis de cartera crediticia, facilitando:
+
+- Identificación de créditos con bajo nivel de recuperación
+- Análisis de desempeño por tipo de convenio (gobierno vs empresa)
+- Evaluación de distribución de cartera por estatus (activo, vencido, liquidado)
+- Seguimiento del monto colocado y comportamiento de pagos
+
+Este tipo de análisis es clave para áreas de:
+
+- Riesgo crediticio
+- Finanzas
+- Planeación comercial
+
+El modelo permite responder preguntas como:
+
+- ¿Qué porcentaje de la cartera está en riesgo?
+- ¿Qué convenios generan mayor colocación?
+- ¿Cuál es el nivel de recuperación por crédito?
 ## Conclusión
 
 Este proyecto muestra una implementación funcional de un pipeline ETL aplicado a un caso de riesgo crediticio, integrando generación de datos, modelado relacional, carga automatizada y consultas analíticas de negocio.
