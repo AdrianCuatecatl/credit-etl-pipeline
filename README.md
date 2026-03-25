@@ -17,6 +17,24 @@ Este proyecto busca mostrar habilidades en:
 
 ![Diagrama ETL](assets/etl-diagram.png)
 
+### Interpretación del flujo
+
+El pipeline simula un proceso típico en entornos financieros donde la información de créditos y pagos se integra para su análisis.
+
+El flujo permite:
+
+- Centralizar datos de originación y pagos
+- Evaluar el comportamiento de la cartera
+- Analizar desempeño por tipo de convenio
+- Identificar posibles riesgos en la recuperación
+
+Este tipo de arquitectura es común en áreas de:
+
+- Riesgo crediticio  
+- Finanzas  
+- Business Intelligence  
+
+
 ## Alcance del proyecto
 
 El pipeline parte de datos sintéticos y construye un flujo simple pero funcional para analizar información de créditos, pagos y convenios.
@@ -29,7 +47,19 @@ Incluye:
 - Validaciones básicas de integridad
 - Consultas analíticas para evaluar cartera
 
+## Arquitectura propuesta (escenario real)
 
+Este pipeline puede evolucionar hacia una arquitectura más robusta:
+
+Sources → Raw → Staging → Core → Analytics → BI
+
+Donde:
+
+- Raw: datos sin procesar
+- Staging: limpieza y validaciones
+- Core: modelo relacional consolidado
+- Analytics: métricas y agregaciones
+- BI: visualización (Power BI / dashboards)
 ## Cómo ejecutar el proyecto
 
 ### 2. Generar datos
