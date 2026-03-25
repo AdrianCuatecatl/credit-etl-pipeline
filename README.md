@@ -62,6 +62,11 @@ Donde:
 - BI: visualización (Power BI / dashboards)
 ## Cómo ejecutar el proyecto
 
+### 1. Instalar dependencias
+```bash
+python -m pip install -r requirements.txt
+```
+
 ### 2. Generar datos
 ```bash
 python src/extract.py
